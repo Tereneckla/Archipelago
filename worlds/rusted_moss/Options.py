@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from Options import Toggle, Choice, PerGameCommonOptions, Range
+from Options import Toggle, Choice, PerGameCommonOptions, Range, DefaultOnToggle
 
 # class TitaniaPiecesRequired(Range):
 #     """How many pieces of Titania are required to complete the game."""
@@ -83,6 +83,10 @@ class MinMP(Range):
     range_start = 0
     range_end = 39
 
+class RandomizeInfiniteGrapple(DefaultOnToggle):
+    """Infinite Grapple can be acquired outside of the Robin Fight"""
+    display_name = "Randomize Infinite Grapple"
+
 @dataclass
 class RustedMossOptions(PerGameCommonOptions):
     # titania_pieces_required: TitaniaPiecesRequired
@@ -98,3 +102,4 @@ class RustedMossOptions(PerGameCommonOptions):
     hard_combat: HardCombat
     shop_discount_percentage: ShopDiscountPercentage
     min_mp: MinMP
+    randomize_infinite_grapple: RandomizeInfiniteGrapple

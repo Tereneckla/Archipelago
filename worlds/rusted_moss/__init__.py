@@ -72,6 +72,9 @@ class RustedMossWorld(World):
         del item_locations["Glass_Coin"]
         del item_locations["Mossy_Wings"]
 
+        if (not self.options.infinite_grapple_randomized):
+            del item_locations["Grappling_Hook"][1][2]
+
     def generate_early(self):
         # apworld version check
         if self.options.character == Character.option_maya:
